@@ -1,0 +1,26 @@
+start_pairing:
+  name: Start pairing
+  fields:
+    radio:
+      required: true
+      selector:
+        select:
+          options: [zigbee, zwave, lutron, kidde, http]
+    timeout:
+      default: 60
+      selector:
+        number:
+          min: 10
+          max: 300
+start_exclusion:
+  name: Start Z-Wave exclusion
+refresh_device:
+  name: Refresh device
+reconfigure_device:
+  name: Reconfigure device
+remove_device:
+  name: Remove device
+rename_device:
+  name: Rename device
+run_scene:
+  name: Run scene
