@@ -5,7 +5,9 @@ from homeassistant.const import CONF_HOST, CONF_PORT
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from .const import *
 from .transport.aau import WinkAAUClient, WinkAAUError
-class WinkLocalConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class WinkLocalConfigFlow(config_entries.ConfigFlow):
+    VERSION = 1
+    DOMAIN = DOMAIN
     VERSION=1
     async def async_step_user(self,user_input=None):
         errors={}
