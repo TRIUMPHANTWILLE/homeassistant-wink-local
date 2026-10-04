@@ -27,12 +27,7 @@ class WinkAAUClient:
         return {"Authorization": f"Bearer {self.token}", "Content-Type": "application/json"}
 
     def _ssl(self):
-        if self.verify_ssl:
-            return None
-        context = ssl.create_default_context()
-        context.check_hostname = False
-        context.verify_mode = ssl.CERT_NONE
-        return context
+    return False if not self.verify_ssl else None
 
     async def _request(self, method: str, path: str, payload: Any | None = None) -> Any:
         try:
